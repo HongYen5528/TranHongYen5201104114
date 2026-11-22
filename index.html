@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Website cá nhân</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef6fc;
+        }
+
+        header {
+            background: linear-gradient(120deg, #0878bd, #45c6e8);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        nav {
+            background: #123b59;
+            padding: 18px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #45c6e8;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 45px 20px 20px;
+        }
+
+        .intro h2 {
+            color: #0878bd;
+            margin-bottom: 15px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 35px 20px 60px;
+        }
+
+        .card {
+            width: 320px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 5px 15px #0002;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            color: #0878bd;
+            margin: 20px 0 10px;
+        }
+
+        .card p {
+            padding: 0 15px;
+            line-height: 1.6;
+        }
+
+        .card a {
+            display: inline-block;
+            background: #0878bd;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin: 20px;
+        }
+
+        .card a:hover {
+            background: #04527f;
+        }
+
+        footer {
+            background: #123b59;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🌐 TRANG WEB CÁ NHÂN</h1>
+        <p>Chào mừng bạn đến với trang web của Hồng Yến.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Trang chủ</a>
+        <a href="aquarium.html">Hồ cá</a>
+        <a href="cv.html">CV cá nhân</a>
+    </nav>
+
+    <section class="intro">
+        <h2>GIỚI THIỆU TRANG WEB</h2>
+        <p>
+            Đây là website thực hành thiết kế web
+            bằng HTML, CSS và JavaScript.
+        </p>
+        <br>
+        <p>Hãy chọn một nội dung bên dưới để khám phá nhé!</p>
+    </section>
+
+    <section class="container">
+
+        <div class="card">
+            <img src="images/conca.webp" alt="Hồ cá">
+
+            <h3>🐠 WEBSITE HỒ CÁ</h3>
+
+            <p>
+                Hãy khám phá thế giới đại dương sinh động
+                với những chú cá bơi lội tung tăng dưới nước.
+            </p>
+
+            <a href="aquarium.html">KHÁM PHÁ</a>
+        </div>
+
+        <div class="card">
+            <img src="images/anh.jpg" alt="CV cá nhân">
+
+            <h3>👤 CV CÁ NHÂN</h3>
+
+            <p>
+                Giới thiệu thông tin cá nhân,
+                học vấn, kỹ năng và sở thích.
+            </p>
+
+            <a href="cv.html">XEM CV</a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 - Website cá nhân</p>
+        <p>Thiết kế bằng HTML, CSS và JavaScript</p>
+    </footer>
+
+</body>
+</html>

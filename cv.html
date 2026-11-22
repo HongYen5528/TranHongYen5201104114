@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Cá Nhân | My Portfol io</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #eaf1f8;
+    color: #334155;
+    padding: 30px 15px;
+}
+
+/* MENU */
+nav {
+    max-width: 950px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px;
+    background: #123c63;
+    border-radius: 12px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #80d9ff;
+}
+
+/* CV */
+.cv-container {
+    max-width: 950px;
+    margin: auto;
+    background: white;
+    display: grid;
+    grid-template-columns: 310px 1fr;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px #123c6320;
+}
+
+/* CỘT TRÁI */
+.sidebar {
+    background: linear-gradient(180deg, #123c63, #1c5b85);
+    color: white;
+    padding: 35px 25px;
+}
+
+.avatar {
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    border: 5px solid #a8e5ff;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d9efff;
+    color: #24618b;
+    font-size: 65px;
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar h2 {
+    font-size: 17px;
+    margin: 28px 0 15px;
+    padding-bottom: 9px;
+    border-bottom: 2px solid #83d8ff;
+    letter-spacing: 1px;
+}
+
+.sidebar p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.skill {
+    margin: 14px 0;
+    font-size: 14px;
+}
+
+.skill-bar {
+    height: 7px;
+    background: #ffffff44;
+    border-radius: 10px;
+    margin-top: 7px;
+    overflow: hidden;
+}
+
+.skill-bar span {
+    display: block;
+    height: 100%;
+    background: #8be1ff;
+    border-radius: 10px;
+}
+
+/* CỘT PHẢI */
+.content {
+    padding: 45px 35px;
+}
+
+.name {
+    font-size: 32px;
+    color: #123c63;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    color: #2692c1;
+    font-size: 16px;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.line {
+    width: 65px;
+    height: 4px;
+    background: #45bce8;
+    margin: 20px 0 30px;
+    border-radius: 5px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    color: #14547e;
+    font-size: 19px;
+    margin-bottom: 15px;
+    border-left: 4px solid #43b9e5;
+    padding-left: 12px;
+}
+
+.section p {
+    line-height: 1.8;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.item {
+    margin-bottom: 17px;
+}
+
+.item h3 {
+    color: #287aa8;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.item .date {
+    color: #8295a7;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.item p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.hobby {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.hobby span {
+    background: #e6f5fc;
+    color: #17638e;
+    padding: 8px 13px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+footer {
+    text-align: center;
+    color: #8295a7;
+    padding: 20px;
+    font-size: 13px;
+}
+
+@media(max-width: 700px) {
+    body {
+        padding: 10px;
+    }
+
+    .cv-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        text-align: center;
+    }
+
+    .sidebar h2 {
+        text-align: left;
+    }
+
+    .content {
+        padding: 30px 22px;
+    }
+
+    .name {
+        font-size: 26px;
+    }
+
+    nav {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    nav, footer {
+        display: none;
+    }
+
+    .cv-container {
+        box-shadow: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="aquarium.html">Hồ cá</a>
+    <a href="cv.html">CV cá nhân</a>
+</nav>
+
+<div class="cv-container">
+
+    <!-- CỘT TRÁI -->
+    <aside class="sidebar">
+
+        <div class="avatar">
+            <!-- ảnh cá nhân -->
+            <img src="images/avatar.jpg" alt="Ảnh cá nhân">
+        </div>
+
+        <h2 style="width: 100%; text-align: center; margin: 0 auto 20px;">
+            THÔNG TIN LIÊN HỆ</h2>
+
+        <p>📧 Email: hongyen0550@gmail.com</p>
+        <p>📲 Phone/Zalo: 0768567041</p>
+        <p> Fb: facebook.com/tran.hong.yen.5528</p>
+        <br>
+
+        <h2 style="width: 100%; text-align: center; margin: 0 auto 20px;">
+            THÔNG TIN CÁ NHÂN</h2>
+        <p>Họ tên: Trần Hồng Yến </p>
+        <p>Ngày tháng năm sinh: 05/05/2008</p>
+        <p>Nơi ở: xã Bà Điểm, Tp.Hồ Chí Minh</p>
+        <br>
+
+        <h2 style="width: 100%; text-align: center; margin: 0 auto 20px;">
+            SỞ THÍCH</h2>
+        <p>🎬 Xem phim</p>
+        <p>💻 Khám phá công nghệ</p>
+        <p>🎵 Nghe nhạc</p>
+        <p>🌱 Học hỏi điều mới</p>
+
+    </aside>
+
+    <!-- CỘT PHẢI -->
+    <main class="content">
+
+        <div class="name-title">
+            <h1 style="width: 100%; text-align: center; margin: 0 auto 20px;">
+                TRẦN HỒNG YẾN
+            </h1>
+            <p class="subtitle" style="width: 100%; text-align: center; margin: 0 auto 20px;">
+                SINH VIÊN CÔNG NGHỆ THÔNG TIN
+            </p>
+
+        <div class="line"></div></div>
+
+        <section class="section">
+
+            <h2>GIỚI THIỆU BẢN THÂN</h2>
+
+            <p>
+                Em là sinh viên khóa 52 ngành Công nghệ thông tin
+                tại Trường Đại học Sư phạm Thành phố Hồ Chí Minh.
+                Em là một người hòa đồng, thân thiện và luôn cố gắng 
+                học hỏi những điều mới, mong muốn được học tập và 
+                trau dồi kiến thức, phát triển bản thân và có thêm 
+                nhiều trải nghiệm trong môi trường mới. 
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>MỤC TIÊU</h2>
+
+            <div class="item">
+                <h3>Ngắn hạn</h3>
+                <p>
+                    Hoàn thiện kiến thức nền tảng về lập trình,
+                    HTML, CSS và JavaScript. Rèn luyện tư duy
+                    logic và kỹ năng giải quyết vấn đề.
+                </p>
+            </div>
+
+            <div class="item">
+                <h3>Dài hạn</h3>
+                <p>
+                    Trở thành người có chuyên môn vững vàng
+                    trong lĩnh vực Công nghệ thông tin, có khả
+                    năng xây dựng các sản phẩm công nghệ hữu ích.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <h2>HỌC VẤN</h2>
+
+            <div class="item">
+                <h3>Trường Đại học Sư phạm Thành phố Hồ Chí Minh</h3>
+                <p class="date">2026 – Hiện tại</p>
+                <p>Chuyên ngành: Công nghệ thông tin</p>
+                <p>Trình độ: Sinh viên đại học</p>
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <h2>DỰ ÁN HỌC TẬP</h2>
+
+            <div class="item">
+                <h3>Thiết kế website hồ cá</h3>
+                <p>
+                    Xây dựng website hồ cá bằng HTML, CSS
+                    và JavaScript, tìm hiểu về giao diện
+                    và hiệu ứng chuyển động.
+                </p>
+            </div>
+
+            <div class="item">
+                <h3>Website CV cá nhân</h3>
+                <p>
+                    Thiết kế trang hồ sơ cá nhân với bố cục
+                    hai cột, màu sắc hài hòa và giao diện
+                    tương thích với nhiều thiết bị.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <h2>ĐIỂM MẠNH</h2>
+
+            <div class="hobby">
+                <span>Ham học hỏi</span>
+                <span>Trách nhiệm</span>
+                <span>Sáng tạo</span>
+                <span>Kiên trì</span>
+                <span>Hợp tác</span>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<footer>
+    © 2026 MY PERSONAL PORTFOLIO
+</footer>
+
+</body>
+</html>

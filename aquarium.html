@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thế Giới ĐẠI DƯƠNG</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #031c35, #07516c);
+    color: white;
+    min-height: 100vh;
+    padding: 25px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 38px;
+    color: #8df5ff;
+    text-shadow: 0 0 20px #00d9ff;
+    letter-spacing: 3px;
+}
+
+header p {
+    margin-top: 12px;
+    color: #c5f7ff;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.aquarium {
+    height: 550px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 9px solid #83dfff;
+    border-radius: 25px;
+    background:
+        radial-gradient(ellipse at 50% 0%,
+        rgba(107,240,255,0.5), transparent 60%),
+        linear-gradient(to bottom,
+        #087aab 0%, #075b91 40%,
+        #023b68 75%, #012644 100%);
+    box-shadow:
+        0 0 25px #00d9ff,
+        inset 0 0 40px rgba(0,0,0,0.4);
+}
+
+/* Ánh sáng dưới nước */
+.light {
+    position: absolute;
+    top: -100px;
+    left: 20%;
+    width: 250px;
+    height: 650px;
+    background: rgba(125,245,255,0.12);
+    transform: rotate(25deg);
+    filter: blur(35px);
+    animation: lightMove 8s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes lightMove {
+    from { left: 10%; }
+    to { left: 70%; }
+}
+
+/* Đáy hồ */
+.sand {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 65px;
+    background: linear-gradient(#b9a36d, #66512e);
+    border-radius: 50% 50% 0 0;
+}
+
+/* Cá */
+.fish {
+    position: absolute;
+    width: 125px;
+    height: 85px;
+    object-fit: contain;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    pointer-events: none;
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.3));
+    will-change: transform;
+}
+
+/* Bong bóng */
+.bubble {
+    position: absolute;
+    bottom: -30px;
+    border: 2px solid rgba(255,255,255,0.55);
+    border-radius: 50%;
+    background: rgba(180,245,255,0.12);
+    animation: rise linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    20% { opacity: 0.8; }
+    100% {
+        transform: translateY(-650px);
+        opacity: 0;
+    }
+}
+
+/* Rong biển */
+.seaweed {
+    position: absolute;
+    bottom: 40px;
+    width: 18px;
+    height: 110px;
+    background: linear-gradient(to right, #087d47, #36d77b);
+    border-radius: 100% 0 100% 0;
+    transform-origin: bottom;
+    animation: wave 3s infinite alternate ease-in-out;
+    z-index: 3;
+}
+
+@keyframes wave {
+    from { transform: rotate(-12deg); }
+    to { transform: rotate(15deg); }
+}
+
+.rock {
+    position: absolute;
+    bottom: 40px;
+    width: 100px;
+    height: 55px;
+    background: linear-gradient(145deg, #929c9c, #394a52);
+    border-radius: 50% 50% 20% 20%;
+    z-index: 4;
+}
+
+/* Bảng điều khiển */
+.controls {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 18px;
+    padding: 25px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.controls h2 {
+    color: #8df5ff;
+    margin-bottom: 18px;
+}
+
+button, .upload-label {
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 20px;
+    margin: 7px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover, .upload-label:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px #00d9ff;
+}
+
+input[type=file] {
+    display: none;
+}
+
+.speed-box {
+    margin: 20px auto;
+}
+
+input[type=range] {
+    width: 220px;
+    accent-color: #00e5ff;
+}
+
+.info {
+    margin-top: 15px;
+    color: #bdefff;
+}
+
+footer {
+    text-align: center;
+    margin: 25px;
+    color: #a8eaff;
+}
+
+@media(max-width:600px) {
+    body { padding: 10px; }
+    header h1 { font-size: 25px; }
+    .aquarium { height: 430px; }
+    .fish { width: 95px; height: 65px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- THANH ĐIỀU HƯỚNG -->
+<nav>
+    <a href="index.html">🏠 TRANG CHỦ</a>
+
+    <a href="aquarium.html">🐠 HỒ CÁ</a>
+
+    <a href="cv.html">👤 CV CÁ NHÂN</a>
+</nav>
+
+<header>
+    <h1>🐠 THẾ GIỚI ĐẠI DƯƠNG 🐠</h1>
+    <p>KHÁM PHÁ ĐẠI DƯƠNG THU NHỎ</p>
+</header>
+
+<style>
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 20px auto 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    background: rgba(0, 200, 255, 0.18);
+    border: 1px solid #8df5ff;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #00bce5;
+    color: #031c35;
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px #00d9ff;
+}
+</style>
+
+<div class="container">
+
+
+    <div class="aquarium" id="aquarium">
+        <div class="light"></div>
+
+        <div class="rock" style="left:5%"></div>
+        <div class="rock" style="left:75%;width:130px"></div>
+
+        <div class="seaweed" style="left:10%;height:130px"></div>
+        <div class="seaweed" style="left:13%;height:90px"></div>
+        <div class="seaweed" style="left:85%;height:140px"></div>
+        <div class="seaweed" style="left:89%;height:100px"></div>
+
+        <div class="sand"></div>
+    <p class="info" id="fishCount"></p>
+
+</div>
+
+    <script>
+        const aquarium = document.getElementById("aquarium");
+const upload = document.getElementById("upload");
+
+let fishes = [];
+let speed = 1;
+let running = true;
+let lastTime = 0;
+
+const defaultFish = [
+    "aquarium/diver1.png",
+    "aquarium/diver2.png",
+    "aquarium/diver3.png",
+    "aquarium/faintSchool.png",
+    "aquarium/goldFishSchool.png",
+    "aquarium/shark.png",
+    "aquarium/turtle.png"
+  
+];
+
+// Tạo cá
+function createFish(src) {
+    const img = document.createElement("img");
+
+    img.src = src;
+    img.className = "fish";
+    img.alt = "Cá đang bơi";
+
+    const w = aquarium.clientWidth;
+    const h = aquarium.clientHeight;
+
+    const fish = {
+        element: img,
+        x: Math.random() * Math.max(0, w - 140),
+        y: 80 + Math.random() * Math.max(0, h - 220),
+        direction: Math.random() > 0.5 ? 1 : -1,
+        speed: 0.6 + Math.random() * 0.8,
+        phase: Math.random() * 6.28,
+        size: 75 + Math.random() * 55
+    };
+
+    img.style.width = fish.size + "px";
+    img.style.height = fish.size * 0.7 + "px";
+
+    aquarium.appendChild(img);
+    fishes.push(fish);
+
+    updateCount();
+}
+
+// Cá mẫu
+function addDefaultFish() {
+    const src = defaultFish[Math.floor(Math.random() * defaultFish.length)];
+    createFish(src);
+}
+
+// Hiển thị số lượng cá
+function updateCount() {
+    document.getElementById("fishCount").innerText =
+        "Hiện có: " + fishes.length + " chú cá";
+}
+
+// Hoạt ảnh cá
+function animate(time) {
+    const dt = lastTime ? Math.min((time - lastTime) / 16.67, 2) : 1;
+    lastTime = time;
+
+    if (running) {
+        const w = aquarium.clientWidth;
+        const h = aquarium.clientHeight;
+
+        fishes.forEach(fish => {
+            fish.x += fish.direction * speed * fish.speed * dt;
+
+            // Chạm mép hồ thì quay đầu
+            if (fish.x + fish.size > w) {
+                fish.x = w - fish.size;
+                fish.direction = -1;
+            }
+
+            if (fish.x < 0) {
+                fish.x = 0;
+                fish.direction = 1;
+            }
+
+            // Chuyển động lên xuống nhẹ nhàng
+            fish.phase += 0.025 * dt;
+            const vertical = Math.sin(fish.phase) * 12;
+
+            // scaleX chỉ lật trái-phải để quay đầu,
+            // không xoay cá lộn bụng.
+            fish.element.style.transform =
+                `translate(${fish.x}px, ${fish.y + vertical}px) scaleX(${fish.direction})`;
+        });
+    }
+
+    requestAnimationFrame(animate);
+}
+
+requestAnimationFrame(animate);
+
+// Tạo bong bóng
+function createBubble() {
+    const bubble = document.createElement("div");
+    bubble.className = "bubble";
+
+    const size = Math.random() * 13 + 5;
+
+    bubble.style.width = size + "px";
+    bubble.style.height = size + "px";
+    bubble.style.left = Math.random() * 100 + "%";
+    bubble.style.animationDuration =
+        (Math.random() * 5 + 4) + "s";
+
+    aquarium.appendChild(bubble);
+
+    setTimeout(() => bubble.remove(), 10000);
+}
+
+setInterval(createBubble, 350);
+
+
+// Tự động thêm cá ban đầu
+defaultFish.forEach(function(src) {
+    createFish(src);
+});
+
+    </script>
+
+<style>
+
+#aquarium {
+    width: 100%;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fish {
+    position: absolute;
+    width: 100px;
+    height: 75px;
+    object-fit: contain;
+    display: block;
+    z-index: 10;
+    pointer-events: none;
+}
+
+</style>
+
+</body>
+</html>
